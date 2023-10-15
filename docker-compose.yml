@@ -1,0 +1,12 @@
+version: '3.9'
+services:
+  mysql:
+    build:
+        context: ./mysql
+        dockerfile: Dockerfile
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: 2171122
+      MYSQL_DATABASE: laravel_mysql
+      MYSQL_USER: Christopher
+      MYSQL_PASSWORD: 2171122

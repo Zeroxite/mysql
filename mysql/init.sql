@@ -1,0 +1,20 @@
+CREATE DATABASE IF NOT EXISTS laravel_mysql;
+
+USE laravel_mysql;
+
+CREATE TABLE products (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    description VARCHAR(255) NOT NULL,
+    price FLOAT NOT NULL,
+    stock INT NOT NULL
+);
+
+ALTER TABLE products 
+ADD COLUMN updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+ADD COLUMN created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP;
+
+
+INSERT INTO products (description, price, stock) VALUES
+('Bicivleta', 8000.00, 5);
+
+FLUSH PRIVILEGES;
