@@ -5,8 +5,12 @@ services:
         context: ./mysql
         dockerfile: Dockerfile
     image: mysql:5.7
+    container_name: mysql_db
+    command: --bind-address=0.0.0.0
     environment:
       MYSQL_ROOT_PASSWORD: 2171122
       MYSQL_DATABASE: laravel_mysql
       MYSQL_USER: Christopher
       MYSQL_PASSWORD: 2171122
+    ports:
+      -"3306:3306"
